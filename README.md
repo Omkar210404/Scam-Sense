@@ -6,6 +6,23 @@ A privacy-first checker for suspicious SMS, WhatsApp and email messages. On Andr
 
 Everything runs on the phone. There is no backend, no account and no analytics. The message is never sent, logged or stored. The built page carries a Content-Security-Policy that only allows requests to its own origin, and the app works offline once it has been opened.
 
+## Screenshots
+
+Real screenshots of the live app in a phone-sized browser (Pixel 7 size), using the built-in examples.
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/screenshots/1-two-tap-intro.png" width="250" alt="First-run screen showing the 2-tap share flow"><br><sub>First run: the 2-tap share flow</sub></td>
+    <td align="center"><img src="docs/screenshots/2-home.png" width="250" alt="Home screen with paste box and examples"><br><sub>Paste box and 6 examples</sub></td>
+    <td align="center"><img src="docs/screenshots/3-likely-scam.png" width="250" alt="Likely scam verdict with reasons"><br><sub>Fake SBI KYC: Likely scam</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/4-highlights.png" width="250" alt="What to do and the highlighted message"><br><sub>What to do + highlighted words</sub></td>
+    <td align="center"><img src="docs/screenshots/5-looks-safe.png" width="250" alt="Real bank OTP marked Looks safe"><br><sub>Real bank OTP: Looks safe</sub></td>
+    <td align="center"><img src="docs/screenshots/6-marathi-light.png" width="250" alt="Marathi electricity scam in light mode"><br><sub>Marathi, light mode</sub></td>
+  </tr>
+</table>
+
 ## How it decides
 
 ```mermaid
