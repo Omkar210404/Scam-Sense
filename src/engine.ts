@@ -156,7 +156,7 @@ const URGENCY = re(
   ['तुरंत', 'तत्काल', 'जल्दी', 'अभी (?:कॉल|क्लिक|अपडेट|जुड़ें|व्हाट्सएप)', '24 घंटे', 'लगेच', 'ताबडतोब', 'त्वरित', 'आत्ताच'],
 );
 const FEE = re(
-  ['fees?', 'charges?', 'deposit', 'processing (?:fee|charge)', 'registration', 'clearance', 'joining (?:fee|amount)', 'membership',
+  ['fees?', 'charges?', '(?<!fixed |term |recurring )deposit', 'processing (?:fee|charge)', 'registration', 'clearance', 'joining (?:fee|amount)', 'membership',
     'advance payment', 'token (?:amount|money)', 'refundable'],
   ['शुल्क', 'फीस', 'डिपॉजिट', 'अनामत', 'रजिस्ट्रेशन', 'नोंदणी', 'प्रोसेसिंग'],
 );
@@ -202,9 +202,18 @@ const BRANDS: [string, RegExp][] = [
   ['Amazon', /\bamazon\b/giu], ['Flipkart', /\bflipkart\b/giu], ['India Post', /\bindia ?post\b|इंडिया पोस्ट/giu], ['FedEx', /\bfedex\b/giu],
   ['DHL', /\bdhl\b/giu], ['Blue Dart', /\bblue ?dart\b/giu], ['Netflix', /\bnetflix\b/giu], ['Airtel', /\bairtel\b/giu], ['Jio', /\bjio\b/giu],
   ['Income Tax', /\bincome tax\b|आयकर/giu], ['RBI', /\brbi\b|रिज़र्व बैंक/giu], ['UIDAI', /\buidai\b/giu], ['Police', /\bpolice\b|पुलिस/giu],
-  ['Customs', /\bcustoms\b|कस्टम/giu], ['MSEB', /\bmseb\b|\bmahavitaran\b|महावितरण/giu],
+  ['Customs', /\bcustoms\b|कस्टम/giu], ['EPFO', /\bepfo\b|ईपीएफओ/giu], ['LIC', /\blic\b|एलआईसी/giu], ['MSEB', /\bmseb\b|\bmahavitaran\b|महावितरण/giu],
   ['bank', /\bbank\b|बैंक|बँक/giu], ['electricity', /\belectricity\b|बिजली|वीज/giu],
 ];
+const SHORT_CODE = /\b(?:text|txt|send|sms|reply)\b[^.\n]{0,25}?\bto:?\s?[0-9]{4,6}\b(?![0-9])/giu;
+const SMS_BLOCK =/\bsms\s+block\b[^.\n]{0,30}?\bto\s+\+?[0-9][0-9 -]{8,14}[0-9]/giu;
+const REF_NUMBER = /(?:\bref(?:erence)?(?:\s?no\.?)?|\brefno|\butr|\brrn|\btxn(?:\s?id)?|\bupi\/(?:cr|dr)|reference number(?: is)?)[\s:#./-]*[0-9]{6,}/giu;
+const ALERT_EVENT = re(
+  ['debited', 'credited', 'spent', 'withdrawn', 'sent rs\\.?', 'avl\\.? bal', 'avbl\\.? bal', 'available balance', 'avl\\.? lmt', 'available limit',
+    'statement', 'total (?:amount )?due', 'minimum due', 'due date', 'emi', 'cleared', 'will mature', 'matured', 'is due on', 'auto-?debit', 'mandate'],
+  ['डेबिट', 'क्रेडिट', 'जमा किए गए', 'जमा हो गई', 'शेष', 'वजा झाले', 'वजा झाला', 'जमा झाला', 'जमा झाले', 'शिल्लक', 'उपलब्ध'],
+);
+const MASKED_ACCOUNT = /(?:a\/c|acct|account|card|खाते|खाता)[^.\n]{0,25}?(?:x+|\*+) ?[0-9]{2,6}|ending (?:with )?[0-9]{4}|\b[x*]{2,}[0-9]{3,6}\b/giu;
 const GREETING = re(['dear (?:customer|user|consumer|member|valued customer|sir/madam|account ?holder|card ?holder)'], ['प्रिय ग्राहक', 'प्रिय उपभोक्ता', 'प्रिय खातेदार']);
 const MISSPELL = re(['acount', 'accout', 'custmer', 'costumer', 'verfy', 'verifiy', 'recieve', 'recieved', 'immediatly', 'imediately', 'suspened', 'blocket', 'kindly verfiy']);
 const HOMOGLYPH = /\p{L}*(?:[a-z][Ͱ-ϿЀ-ӿ]|[Ͱ-ϿЀ-ӿ][a-z])\p{L}*/giu;
@@ -225,7 +234,9 @@ const OFFICIAL: Record<string, string> = {
   'airtel.in': 'Airtel', 'jio.com': 'Jio', 'incometax.gov.in': 'Income Tax', 'rbi.org.in': 'RBI', 'uidai.gov.in': 'UIDAI', 'npci.org.in': 'NPCI',
   'irctc.co.in': 'IRCTC', 'mahadiscom.in': 'MSEB', 'bsesdelhi.com': 'BSES', 'tatapower.com': 'Tata Power', 'adanielectricity.com': 'Adani Electricity',
   'whatsapp.com': 'WhatsApp', 'paypal.com': 'PayPal', 'apple.com': 'Apple', 'icloud.com': 'Apple', 'google.com': 'Google', 'microsoft.com': 'Microsoft',
-  'gov.in': 'Government of India', 'nic.in': 'Government of India',
+  'gov.in': 'Government of India', 'nic.in': 'Government of India', 'hdfcbk.io': 'HDFC Bank',
+  // RBI's reserved domain: only licensed Indian banks can register under .bank.in.
+  'bank.in': 'bank.in',
 };
 const HOST_BRANDS: [string, string][] = [
   ['onlinesbi', 'SBI'], ['sbi', 'SBI'], ['hdfc', 'HDFC Bank'], ['icici', 'ICICI Bank'], ['axisbank', 'Axis Bank'], ['kotak', 'Kotak'], ['paytm', 'Paytm'],
@@ -289,6 +300,9 @@ export function analyze(model: Model, input: string): Result {
   const add = (id: string, weight: number, hits: Hit[], severity: Severity = 'danger', extra: Partial<Signal> = {}) =>
     s.push({ id, weight, hits, severity, ...extra });
   const f = (r: RegExp) => find(r, text);
+  // Parts of genuine bank alerts that would otherwise look like scam signs: "SMS BLOCK 1234 to 9215676766"
+  // (the bank's own number, and "block" is not a threat there) and 12-digit UPI/IMPS reference numbers.
+  const bankRefs = [...f(SMS_BLOCK), ...f(REF_NUMBER)];
 
   // Secrets: OTP / PIN / CVV / password requests, ignoring "do not share" phrases.
   const neg = f(NEGATION);
@@ -326,17 +340,19 @@ export function analyze(model: Model, input: string): Result {
   if (unknown && !look && !ip && !short && !odd) add('unknown_link', 0.12, [unknown], 'link', { host: unknown.host });
 
   // Pressure
-  const threat = f(THREAT);
+  const threat = f(THREAT).filter((h) => !within(h, bankRefs));
   if (threat.length) add('threat', 0.35, threat);
   const urgency = f(URGENCY);
   if (urgency.length) add('urgency', 0.25, urgency, 'warn');
 
   // Phone numbers to call back (toll-free 1800/1860 numbers are left out)
   const phones = [...text.matchAll(PHONE)].map((m) => ({ start: m.index, end: m.index + m[0].length }))
-    .filter((h) => !/^1[ -]?8[06]0/.test(text.slice(h.start, h.end).replace(/^\+91[ -]?/, '')));
+    .filter((h) => !/^1[ -]?8[06]0/.test(text.slice(h.start, h.end).replace(/^\+91[ -]?/, '')) && !within(h, bankRefs));
   const calls = f(CALL);
   const callback = (phones.length && calls.length) || chat?.host === 'wa.me';
   if (callback) add('callback', 0.35, [...phones, ...calls]);
+  const shortCode = f(SHORT_CODE).filter((h) => !within(h, bankRefs));
+  if (shortCode.length) add('premium_sms', 0.3, shortCode, 'warn');
 
   // Money
   const amounts = find(AMOUNT, text);
@@ -386,19 +402,34 @@ export function analyze(model: Model, input: string): Result {
   const glyphs = find(HOMOGLYPH, text);
   if (glyphs.length) add('homoglyph', 0.5, glyphs);
 
+  // A normal bank alert: it reports money moving on your own (masked) account or card and asks for
+  // nothing. Scams that copy this style still ask for something (a code, a call, a link), so any strong
+  // signal or a call-back number cancels it.
+  const events = f(ALERT_EVENT);
+  const distinctEvents = new Set(events.map((h) => text.slice(h.start, h.end).toLowerCase())).size;
+  const bankNamed = BRANDS.some(([, r]) => find(r, text).length > 0);
+  const bankAlert = events.length > 0 && (f(MASKED_ACCOUNT).length > 0 || distinctEvents >= 2 || bankNamed)
+    && !callback && !s.some((x) => x.weight >= 0.45);
+  // Nothing to act on: no link, no number, no money or code request. The model alone counts less then.
+  const mobiles = phones.filter((h) => /^(?:\+?91[ -]?|0)?[6-9]/.test(text.slice(h.start, h.end)));
+  const quiet = !links.length && !mobiles.length && !fee.length && !/\breply\b|जवाब दें|उत्तर द्या/i.test(text) && !s.some((x) => x.id === 'secret_request' || x.id === 'pin_to_receive');
+
   // Combine: each signal raises the risk independently (noisy-OR), the model counts as one more signal.
-  // The model adds nothing below 0.35, and counts half for Hindi/Marathi script, where it saw only ~100
-  // hand-written training messages.
-  const mlWeight = (detectLang(text) ? 0.5 : 0.9) * Math.max(0, (ml - 0.35) / 0.65);
-  let risk = 1 - (1 - mlWeight) * s.reduce((acc, x) => acc * (1 - x.weight), 1);
+  // The model adds nothing below 0.35, and counts half for Hindi/Marathi script, where it saw few
+  // hand-written training messages. It counts much less for bank alerts, which the UCI data lacks.
+  const mlWeight = (detectLang(text) ? 0.5 : 0.9) * (bankAlert ? 0.15 : quiet ? 0.6 : 1) * Math.max(0, (ml - 0.35) / 0.65);
+  const damp = bankAlert ? 0.5 : 1;
+  let risk = 1 - (1 - mlWeight) * s.reduce((acc, x) => acc * (1 - x.weight * damp), 1);
   const otpNotice = !s.some((x) => x.id === 'secret_request') && neg.length > 0 && f(SECRET).length > 0;
-  if (otpNotice) risk *= 0.7;
+  if (otpNotice) risk *= 0.5;
   const allOfficial = official.length > 0 && risky.length === 0;
   if (allOfficial) risk *= 0.4;
   if (s.some((x) => x.weight >= 0.6)) risk = Math.max(risk, 0.45);
   // "Likely scam" needs at least one concrete rule hit, so it always comes with a reason you can check.
   const concrete = s.some((x) => x.weight >= 0.45) || s.filter((x) => x.weight >= 0.25).length >= 2;
   if (!concrete) risk = Math.min(risk, 0.69);
+  // A message that asks for nothing and has no warning sign stays "Looks safe", whatever the model says.
+  if (quiet && !s.some((x) => x.weight >= 0.25)) risk = Math.min(risk, 0.35);
   const verdict: Verdict = risk >= 0.7 ? 'scam' : risk >= 0.4 ? 'suspicious' : 'safe';
 
   // Reasons: strongest signals first, 2 to 4 of them.
@@ -410,17 +441,20 @@ export function analyze(model: Model, input: string): Result {
     else if (reasons.length < 2 && ml >= 0.4) reasons.push({ id: 'ml_mid', tone: 'bad' });
     for (const x of sorted) if (reasons.length < 2 && !reasons.some((r) => r.id === x.id)) reasons.push({ id: x.id, tone: 'bad', brand: x.brand, host: x.host });
   } else {
+    if (bankAlert) reasons.push({ id: 'bank_alert', tone: 'good' });
     if (otpNotice) reasons.push({ id: 'otp_notice', tone: 'good' });
     if (allOfficial) reasons.push({ id: 'official_link', tone: 'good', brand: official[0].brand });
-    const asks = links.length || phones.length || fee.length || s.some((x) => x.id === 'secret_request' || x.id === 'pin_to_receive');
-    if (!asks && reasons.length < 3) reasons.push({ id: 'no_asks', tone: 'good' });
+    if (quiet && reasons.length < 3) reasons.push({ id: 'no_asks', tone: 'good' });
     if (ml < 0.3 && reasons.length < 3) reasons.push({ id: 'ml_low', tone: 'good' });
-    for (const x of sorted) if (reasons.length < 4 && x.weight >= 0.1) reasons.push({ id: x.id, tone: 'info', brand: x.brand, host: x.host });
+    for (const x of sorted) {
+      if (reasons.length < 4 && x.weight >= 0.1 && (!bankAlert || x.severity === 'link')) reasons.push({ id: x.id, tone: 'info', brand: x.brand, host: x.host });
+    }
   }
 
-  // Highlights: merge overlapping spans, the more serious kind wins.
+  // Highlights: merge overlapping spans, the more serious kind wins. A safe bank alert only shows its links.
   const rank: Record<Severity, number> = { danger: 3, link: 2, warn: 1 };
-  const raw = s.flatMap((x) => x.hits.map((h) => ({ ...h, severity: x.severity })));
+  const shown = verdict === 'safe' && bankAlert ? s.filter((x) => x.severity === 'link') : s;
+  const raw = shown.flatMap((x) => x.hits.map((h) => ({ ...h, severity: x.severity })));
   for (const l of links) raw.push({ start: l.start, end: l.end, severity: l.kind === 'lookalike' || l.kind === 'ip' ? 'danger' : 'link' });
   raw.sort((a, b) => a.start - b.start || b.end - a.end);
   const spans: Span[] = [];

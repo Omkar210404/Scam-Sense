@@ -218,6 +218,11 @@ const REASONS: Record<string, T> = {
     hi: 'यह मैसेज में दिए गए नंबर पर कॉल या WhatsApp करने को कह रहा है।',
     mr: 'मेसेजमधील नंबरवर कॉल किंवा WhatsApp करायला सांगत आहे.',
   },
+  premium_sms: {
+    en: 'It asks you to text a word to a short number. Such messages can cost money or sign you up to paid services.',
+    hi: 'यह किसी छोटे नंबर पर कोई शब्द SMS करने को कहता है। ऐसे मैसेज से पैसे कट सकते हैं या पेड सेवा शुरू हो सकती है।',
+    mr: 'हा एखाद्या छोट्या नंबरवर शब्द SMS करायला सांगतो. अशा मेसेजमुळे पैसे कापले जाऊ शकतात किंवा पेड सेवा सुरू होऊ शकते.',
+  },
   impersonation: {
     en: 'It claims to be from {brand}, but wants you to use its own link or number.',
     hi: 'यह खुद को {brand} की ओर से बताता है, पर अपना ही लिंक या नंबर इस्तेमाल करवाना चाहता है।',
@@ -253,6 +258,11 @@ const REASONS: Record<string, T> = {
     hi: 'इसके कुछ शब्द जाने-पहचाने स्पैम मैसेज से मिलते हैं।',
     mr: 'याचे काही शब्द माहीत असलेल्या स्पॅम मेसेजशी जुळतात.',
   },
+  bank_alert: {
+    en: 'It reads like a normal bank alert: it reports money on your own account or card and asks you for nothing.',
+    hi: 'यह सामान्य बैंक अलर्ट जैसा है: यह आपके अपने खाते या कार्ड के लेन-देन की जानकारी देता है और आपसे कुछ नहीं माँगता।',
+    mr: 'हा नेहमीच्या बँक सूचनेसारखा आहे: तुमच्या स्वतःच्या खात्यातील किंवा कार्डवरील व्यवहाराची माहिती देतो आणि तुमच्याकडून काहीही मागत नाही.',
+  },
   otp_notice: {
     en: 'It tells you not to share your code, as real bank messages do.',
     hi: 'यह कहता है कि अपना कोड किसी को न बताएँ, जैसा असली बैंक मैसेज कहते हैं।',
@@ -278,6 +288,7 @@ const REASONS: Record<string, T> = {
 const GENERIC_BRANDS: Record<string, T> = {
   bank: { en: 'a bank', hi: 'बैंक', mr: 'बँके' },
   electricity: { en: 'the electricity company', hi: 'बिजली कंपनी', mr: 'वीज कंपनी' },
+  'bank.in': { en: 'a registered Indian bank (.bank.in)', hi: 'पंजीकृत भारतीय बैंक (.bank.in)', mr: 'नोंदणीकृत भारतीय बँक (.bank.in)' },
 };
 
 export function reasonText(r: Reason, lang: Lang): string {

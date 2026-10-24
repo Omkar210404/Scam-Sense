@@ -34,32 +34,36 @@ flowchart LR
 ```
 
 1. **Rules** ([src/engine.ts](src/engine.ts)) look for patterns in English, Hindi, Marathi and romanised Hinglish: requests for an OTP, PIN, CVV or password (a "do not share your OTP" line does *not* count), "enter your PIN to receive money", screen-sharing apps, urgency and threats, fee or money requests, lottery wins, job offers that charge a fee, guaranteed or doubled returns, electricity/gas cut-off threats, parcel fees, phone numbers to call or WhatsApp, and a claimed bank or company. Links are checked separately: a brand name inside a different domain (`sbi-secure-kyc.xyz`, `paypa1-secure.com`), URL shorteners, IP-address links, punycode and unusual TLDs. Each rule has a weight.
-2. **Model** ([train.py](train.py)): TF-IDF over word 1–2 grams and character 2–4 grams, then logistic regression. It is exported to one JSON file (281 KB) and run in plain TypeScript, with no ML runtime. The JS port matches scikit-learn to within 0.00003 on every test message.
-3. **Combine**: each rule and the model raise the risk independently (noisy-OR). The model adds nothing below 0.35 probability, and counts half on Devanagari text. "Likely scam" needs at least one concrete rule hit, so a red verdict always has a reason you can check.
+2. **Model** ([train.py](train.py)): TF-IDF over word 1–2 grams and character 2–4 grams, then logistic regression. It is exported to one JSON file (282 KB) and run in plain TypeScript, with no ML runtime. The JS port matches scikit-learn to within 0.00004 on every test message.
+3. **Combine**: each rule and the model raise the risk independently (noisy-OR). The model adds nothing below 0.35 probability, and counts half on Devanagari text. Three guards stop the model from overruling the rules:
+   - **Bank alerts**: a message that reports money moving on your own masked account or card (`A/c XX1234 debited…`, `Avl Bal`, `card ending 4521`) and asks for nothing counts as a normal bank alert. The bank's own "SMS BLOCK 1234 to 92156…" line and 12-digit UPI reference numbers are not treated as call-back numbers or threats.
+   - **Nothing to act on**: if a message has no link, no mobile number, no money or code request, nothing to reply or text, and no warning sign, it stays **Looks safe**, whatever the model says. A scam always asks you to do something.
+   - **Red needs a reason**: "Likely scam" needs at least one concrete rule hit, so a red verdict always has a reason you can check.
 
 ## Measured results
 
 Measured with `npm run eval`, which runs the full app (rules + model, exactly as in the browser) on a held-out test split. That split was never used for training, for choosing the model's C, or for tuning the rules (the rules were tuned on a separate validation split).
 
-Data: the UCI SMS Spam Collection (5,574 messages, 5,159 after removing exact duplicates so that no copy sits in both train and test) plus 142 synthetic messages. Each source is split 70 / 10 / 20 (train / validation / test), stratified, seed 42. "Flagged" means Suspicious or Likely scam.
+Data: the UCI SMS Spam Collection (5,574 messages, 5,159 after removing exact duplicates so that no copy sits in both train and test) plus 184 synthetic messages. Each source is split 70 / 10 / 20 (train / validation / test), stratified, seed 42. "Flagged" means Suspicious or Likely scam.
 
 | Test set | Messages | Spam/scam | Accuracy | Precision | Recall |
 |---|---|---|---|---|---|
-| UCI SMS Spam Collection, flagged | 1,032 | 129 | 99.2% | 98.4% | 95.3% |
-| UCI, "Likely scam" only | 1,032 | 129 | 90.0% | 100.0% | 20.2% |
-| Synthetic (written by me), flagged | 29 | 15 | 100% | 100% | 100% |
+| UCI SMS Spam Collection, flagged | 1,032 | 129 | 97.7% | 99.1% | 82.2% |
+| UCI, "Likely scam" only | 1,032 | 129 | 90.1% | 100.0% | 20.9% |
+| Synthetic (written by me), flagged | 38 | 16 | 97.4% | 94.1% | 100% |
 
-The model alone (threshold 0.5, same UCI test split) scores accuracy 99.2%, precision 98.4%, recall 95.3%.
+The model alone (threshold 0.5, same UCI test split) scores accuracy 99.3%, precision 99.2%, recall 95.3%.
 
 How to read these numbers:
-- Most UCI "spam" is 2011-era UK marketing (ringtones, "txt STOP"), not fraud. So the app mostly marks it **Suspicious**, and only 20% reach **Likely scam**. That is intended: a red verdict needs a concrete scam sign.
-- The synthetic test set is tiny, and I wrote it in the same style as the training examples and the rules. Treat 100% there as a sanity check, not as evidence that the app works on real Indian scam messages. There is no public labelled set of Hindi or Marathi scam messages that I could test on.
+- Most UCI "spam" is 2011-era UK marketing (ringtones, chat lines, "txt STOP"), not fraud. The app mostly marks it **Suspicious**, and only 21% reach **Likely scam**, because a red verdict needs a concrete scam sign. The 23 spam messages it misses are mostly adverts that ask you for nothing.
+- Recall on UCI was 95.3% in the first version. It dropped to 82.2% when I added the "nothing to act on" and bank-alert guards, because the first version flagged most genuine bank alerts (14 of 20 in a hand-written check, 6 of them as "Likely scam"). For a scam checker, wrongly alarming people about their real bank messages is the worse error, so I kept the guards.
+- The synthetic test set is tiny, and I wrote it in the same style as the training examples and the rules. Treat it as a sanity check, not as evidence that the app works on real Indian scam messages. There is no public labelled set of Hindi or Marathi scam messages that I could test on.
 
 ## Honest limits
 
 - **Share target**: works on **Android with Chrome (or another Chromium browser) after installing the PWA**. It does **not** work on iOS: Safari does not support Web Share Target, so on iPhone you paste the message. It also needs HTTPS (or localhost).
-- **The model has a sender bias**: in UCI, normal messages almost never contain phone numbers or links. So "call me on 98xxxxxxxx" from a friend can come out **Suspicious**.
-- **Little Indian-language data**: the Hindi, Marathi and Hinglish knowledge comes mostly from hand-written rules and about 100 synthetic training messages. New wording, other languages (Tamil, Bengali and so on) and scams with no link, number or money request will be missed.
+- **The model has a sender bias**: in UCI, normal messages almost never contain phone numbers, links or amounts. The guards above limit this, but "call me on 98xxxxxxxx" from a friend can still come out **Suspicious**.
+- **Little Indian-language data**: the Hindi, Marathi and Hinglish knowledge comes mostly from hand-written rules and about 130 synthetic training messages. New wording, other languages (Tamil, Bengali and so on) and scams with no link, number or money request will be missed.
 - The rules only see the text. They cannot check the real sender, look up links, or know if a number belongs to a bank. A scam written to look ordinary will pass, and a real message can be flagged. **This is guidance, not proof.**
 
 ## Run it
@@ -88,7 +92,7 @@ Then open the site on an Android phone in Chrome, tap **Install app** (or menu �
 ## Credits
 
 - **UCI SMS Spam Collection** by Tiago A. Almeida and José María Gómez Hidalgo, UCI Machine Learning Repository, [doi:10.24432/C5CC84](https://doi.org/10.24432/C5CC84), licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Paper: *Contributions to the Study of SMS Spam Filtering: New Collection and Results*, DocEng 2011. The raw file is downloaded by `train.py` and not stored in this repo.
-- **Synthetic examples**: [data/synthetic.tsv](data/synthetic.tsv) (72 scam, 70 safe; English, Hindi, Marathi, Hinglish) were **written by hand for this project and are not real messages**. Phone numbers and domains in them are made up.
+- **Synthetic examples**: [data/synthetic.tsv](data/synthetic.tsv) (78 scam, 106 safe, including bank and service alerts; English, Hindi, Marathi, Hinglish) were **written by hand for this project and are not real messages**. Phone numbers and domains in them are made up.
 - Built with scikit-learn, React and Vite. Help line shown on scam verdicts: 1930, India's National Cyber Crime Helpline (cybercrime.gov.in).
 
 MIT licence.

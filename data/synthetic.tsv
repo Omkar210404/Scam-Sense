@@ -141,3 +141,45 @@ safe	hinglish	personal	Mera phone ki battery khatam ho rahi hai, baad mein baat 
 safe	hinglish	otp	Aapka OTP 284716 hai. Kisi ke saath share na karein.
 safe	hinglish	bill	Bijli ka bill 1,050 aaya hai is mahine, kal bhar dunga
 safe	hinglish	personal	Train 20 minute late hai, station pe ruk ja
+safe	en	txn	INR 3,200.00 debited from A/c no. XX8812 on 21-10-26 for UPI-BIGBASKET. Avl Bal INR 18,450.20. Not you? Call 18001802222 -Bank of Baroda
+safe	en	txn	Your a/c no. XXXXXXXX4471 is credited by Rs.12,000.00 on 20-10-26 by a/c linked to mobile 9XXXXXX123-RAMESH (IMPS Ref no 629011223344). -PNB
+safe	en	txn	Rs 650.00 withdrawn at ATM from A/c XX2290 on 19-Oct-26. Avl bal Rs 7,110.00. If not done by you, call our toll free number 18004251515 -Canara Bank
+safe	en	txn	Thank you for using your IndusInd Bank Credit Card ending 7781 for INR 2,349.00 at RELIANCE DIGITAL on 18-10-2026. Available limit INR 61,200.
+safe	en	txn	Your IDFC FIRST Bank A/C XX5523 is debited by INR 999.00 towards NETFLIX auto-debit mandate on 15-10-2026. Bal: INR 22,104.33
+safe	en	txn	Payment of Rs 4,210 received towards your Yes Bank credit card XX6612. Thank you.
+safe	en	txn	Your Federal Bank account XX0098 statement for September 2026 is ready. View it in the FedMobile app.
+safe	en	txn	Union Bank: Your loan EMI of Rs 12,880 for A/c XX4410 has been debited successfully on 05-10-2026.
+safe	en	txn	Salary of INR 41,250.00 credited to A/c XX3381 on 30-09-2026. Available balance INR 44,987.10 -Kotak Bank
+safe	en	txn	Your Kotak Credit Card statement is generated. Total amount due Rs 7,450, pay by 12-Nov-2026 using the Kotak app.
+safe	en	txn	Dear Customer, cheque no. 004512 for Rs 22,000 presented in your A/c XX7731 has been paid. -Union Bank of India
+safe	en	txn	Your Fixed Deposit No. XX9021 of Rs 50,000 has been renewed for 1 year at 7.1% p.a. -Bank of Baroda
+safe	en	txn	Reminder: Your credit card payment of Rs 3,120 is due on 08-Nov-2026. Ignore if already paid. -IndusInd Bank
+safe	en	txn	Your new debit card ending 6650 has been dispatched to your registered address. It will reach you in 5 working days. -Canara Bank
+safe	en	txn	Your request to block card ending 3349 has been processed. Order a new card from the mobile app. -Yes Bank
+safe	en	txn	Your LIC premium of Rs 6,412 for policy 91234567 has been received. Thank you.
+safe	en	txn	EPFO: Your contribution of Rs 3,600 for Sep-2026 has been credited to your PF account.
+safe	en	txn	Your income tax refund of Rs 4,870 has been credited to your bank account ending 7712.
+safe	en	service	Your Swiggy order from Meghana Foods has been delivered. Enjoy your meal!
+safe	en	service	IRCTC: PNR 8421736590, Train 12951, 25-Oct, 3A, CNF B2 31. Have a safe journey.
+safe	en	service	Your Airtel bill of Rs 599 for Oct is generated. Due date 28-Oct. Pay in the Airtel Thanks app.
+safe	en	service	HP Gas: Your refill booking no. 772341 is confirmed. Cash memo amount Rs 905. Delivery in 2 days.
+safe	en	service	Your Flipkart order for Boat Earbuds has been delivered. Rate your experience in the app.
+safe	en	service	Recharge of Rs 239 successful on your Jio number. Validity 28 days.
+safe	en	service	Your Zomato order is on the way and will arrive in 20 minutes.
+safe	en	bill	Mahavitaran: Your electricity bill for Sep 2026 is Rs 1,240, due on 25-Oct. Pay via the Mahavitaran app or official website.
+safe	hi	txn	आपके खाते XX4412 से 1,200 रुपये ATM से निकाले गए। शेष राशि 8,300 रुपये। -पीएनबी
+safe	hi	txn	आपके क्रेडिट कार्ड XX9011 पर 2,450 रुपये का भुगतान प्राप्त हुआ। धन्यवाद।
+safe	hi	txn	आपकी EMI 6,500 रुपये खाते XX2231 से सफलतापूर्वक कट गई है।
+safe	hi	service	आपका गैस सिलेंडर बुक हो गया है, बुकिंग नंबर 556120। डिलीवरी 2 दिन में होगी।
+safe	mr	txn	तुमच्या खाते XX5510 मध्ये 15,000 रुपये जमा झाले. उपलब्ध शिल्लक 21,300 रुपये.
+safe	mr	txn	तुमच्या क्रेडिट कार्ड XX3317 वरून 899 रुपये खर्च झाले. उपलब्ध मर्यादा 45,000 रुपये.
+safe	mr	txn	तुमचा कर्जाचा हप्ता 7,200 रुपये खाते XX6612 मधून यशस्वीपणे वजा झाला.
+safe	mr	bill	महावितरण: सप्टेंबर 2026 चे तुमचे वीज बिल 860 रुपये आहे. देय तारीख 22 ऑक्टोबर. अधिकृत ॲपवरून भरा.
+safe	hinglish	txn	Aapke account XX8820 mein 5000 credit ho gaye hai, balance 12,400
+safe	hinglish	txn	Bhai EMI kat gayi is mahine ki, 6200 gaye account se
+scam	en	otp	Dear Customer, Rs 24,999 has been debited from your A/c XX1290. If not done by you, call our helpline 8102345678 immediately to cancel.
+scam	en	otp	Your SBI credit card XX4410 is charged Rs 18,500. To cancel this transaction share the OTP received on your phone.
+scam	en	kyc	Rs 9,999 debited from A/c XX7712. Not you? Click sbi-dispute-help.top to block your card now.
+scam	hi	otp	आपके खाते XX2201 से 15,000 रुपये डेबिट हुए हैं। अगर आपने नहीं किया तो तुरंत इस नंबर पर कॉल करें 7065123498
+scam	mr	otp	तुमच्या खात्यातून 12,000 रुपये वजा झाले. तुम्ही केले नसेल तर लगेच या नंबरवर कॉल करा 9823104567
+scam	hinglish	otp	Aapke card se 8,500 kat gaye hai. Cancel karne ke liye jo OTP aaya hai woh bata do
