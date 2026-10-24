@@ -1,5 +1,7 @@
 # ScamSense
 
+**Live app:** https://omkar210404.github.io/Scam-Sense/ (open on Android Chrome and install it to use Share → ScamSense)
+
 A privacy-first checker for suspicious SMS, WhatsApp and email messages. On Android you long-press a message, tap **Share**, pick **ScamSense**, and you get a verdict at once: **Looks safe**, **Suspicious** or **Likely scam**, with 2 to 4 reasons in plain English, Hindi or Marathi, the warning words highlighted, and a short "what to do" line. You can also paste a message, or try one of the 6 built-in examples.
 
 Everything runs on the phone. There is no backend, no account and no analytics. The message is never sent, logged or stored. The built page carries a Content-Security-Policy that only allows requests to its own origin, and the app works offline once it has been opened.
@@ -62,7 +64,7 @@ npm run eval         # full-app metrics on the test split (needs train.py to hav
 ## Deploy (HTTPS is required for install and share)
 
 - **Vercel**: import the repo, framework preset *Vite*, build `npm run build`, output `dist`. Done; Vercel serves HTTPS.
-- **GitHub Pages**: `npm run build`, then publish `dist/` to a `gh-pages` branch, for example `npx gh-pages -d dist`, and set Pages to serve from that branch. All paths are relative, so `https://<user>.github.io/scamsense/` works.
+- **GitHub Pages** (used for the live app): [.github/workflows/deploy.yml](.github/workflows/deploy.yml) builds and publishes `dist/` on every push to `main`. In the repo settings, set Pages → Source to *GitHub Actions*. All paths are relative, so the `/Scam-Sense/` sub-path works.
 
 Then open the site on an Android phone in Chrome, tap **Install app** (or menu → *Install app*), and ScamSense appears in the share sheet.
 
