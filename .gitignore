@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.venv/
+__pycache__/
+data/raw/
+data/split/
+*.tsbuildinfo
+*.log
+.env
+.env.*
+.claude/
+.DS_Store
+Thumbs.db

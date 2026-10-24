@@ -1,0 +1,143 @@
+label	lang	kind	text
+scam	en	kyc	Dear Customer, your SBI account will be blocked today due to incomplete KYC. Update PAN immediately at http://sbi-kyc-verify.top/update to avoid suspension.
+scam	en	kyc	HDFC Bank: Your netbanking is suspended. Complete your KYC within 24 hrs by clicking bit.ly/hdfc-kyc-now or your account will be permanently closed.
+scam	en	kyc	ALERT! Your Paytm KYC has expired. Call our KYC officer on 7428915036 now to reactivate your wallet, otherwise balance will be frozen.
+scam	hi	kyc	प्रिय ग्राहक, आपका बैंक खाता आज रात बंद कर दिया जाएगा। तुरंत KYC अपडेट करें: http://kyc-sbi-online.xyz
+scam	hi	kyc	आपका पैन कार्ड खाते से लिंक नहीं है, आपका खाता ब्लॉक हो जाएगा। अभी इस लिंक पर जाकर विवरण भरें bit.ly/pan-link-kyc
+scam	mr	kyc	प्रिय ग्राहक, तुमचे बँक खाते आज बंद होईल. लगेच KYC अपडेट करा: http://bank-kyc-update.online
+scam	mr	kyc	तुमचा पॅन कार्ड लिंक नाही, त्यामुळे खाते ब्लॉक केले जाईल. ताबडतोब या नंबरवर कॉल करा 9137452086
+scam	hinglish	kyc	Dear customer aapka SBI account aaj block ho jayega. Turant KYC update karein is link par sbi-kyc-help.in/verify
+scam	hinglish	kyc	Aapka bank account suspend ho gaya hai, PAN update nahi kiya. Abhi call karo 8851230947 warna account band.
+scam	en	otp	Hi, this is from your bank's security team. We sent you a 6 digit code by mistake, please share the OTP with us to cancel the transaction.
+scam	en	otp	Your account will be debited Rs 49,999. If not done by you, reply with the OTP received to cancel immediately.
+scam	en	otp	Amazon refund of Rs 2,340 is pending. To receive it, tell us the OTP and your card CVV on this number 9608812734.
+scam	hi	otp	आपके खाते से गलत ट्रांजैक्शन हुआ है। उसे रोकने के लिए अभी आए हुए ओटीपी को इस नंबर पर बताएं 9431127860
+scam	hi	otp	बैंक से बोल रहा हूँ, आपका कार्ड बंद हो रहा है। कार्ड चालू रखने के लिए अपना एटीएम पिन और ओटीपी बताइए।
+scam	mr	otp	तुमच्या खात्यावरून चुकीचा व्यवहार झाला आहे. तो रद्द करण्यासाठी आलेला ओटीपी या नंबरवर पाठवा 7208341956
+scam	mr	otp	बँकेतून बोलतोय, तुमचे कार्ड बंद होणार आहे. कार्ड चालू ठेवण्यासाठी तुमचा पिन आणि ओटीपी सांगा.
+scam	hinglish	otp	Sir aapke phone pe ek OTP aaya hoga, galti se bhej diya, please woh OTP bata dijiye
+scam	hinglish	otp	Refund ke liye aapko UPI PIN dalna hoga, jo request aayi hai usme PIN enter karo aur paisa turant aa jayega
+scam	en	prize	Congratulations! Your mobile number has won Rs 25,00,000 in the KBC lucky draw. To claim, pay processing fee of Rs 4,500 and call 8294016735.
+scam	en	prize	You are the lucky winner of an iPhone 15 in our anniversary contest! Claim now at win-prize-india.club before it expires tonight.
+scam	en	prize	Dear user, you have received a cashback reward of Rs 5,000. Scan the QR code and enter your UPI PIN to receive the money.
+scam	hi	prize	बधाई हो! आपने 25 लाख रुपये की लॉटरी जीती है। इनाम पाने के लिए 3,500 रुपये प्रोसेसिंग फीस जमा करें।
+scam	hi	prize	आपका नंबर लकी ड्रा में चुना गया है, आपको कार इनाम में मिलेगी। अभी इस नंबर पर व्हाट्सएप करें 9006312478
+scam	mr	prize	अभिनंदन! तुम्ही 10 लाख रुपयांची लॉटरी जिंकली आहे. बक्षीस मिळवण्यासाठी 2,000 रुपये शुल्क भरा.
+scam	mr	prize	तुमचा नंबर लकी ड्रॉ मध्ये निवडला गेला आहे. बक्षीस घेण्यासाठी लगेच या लिंकवर क्लिक करा http://lucky-inam.top
+scam	hinglish	prize	Badhai ho! Aapne KBC lottery mein 25 lakh jeete hai. Paise lene ke liye 5000 registration fee bhejo is number pe 7091238845
+scam	hinglish	prize	Aapko 2000 ka cashback mila hai, paise receive karne ke liye QR scan karke PIN daalo
+scam	en	parcel	India Post: Your parcel is on hold due to incomplete address. Update within 12 hours and pay Rs 25 redelivery fee at indiapost-redeliver.top
+scam	en	parcel	FedEx: A package addressed to you is held at customs. Pay the clearance charge of Rs 1,850 to release it, call our agent 8820143567.
+scam	en	parcel	Your courier could not be delivered. Click https://bit.ly/3xTrack to reschedule and pay a small fee of Rs 10.
+scam	hi	parcel	इंडिया पोस्ट: आपका पार्सल गलत पते के कारण रुका हुआ है। 24 घंटे में पता अपडेट करें और 25 रुपये शुल्क दें: indiapost-help.xyz
+scam	hi	parcel	आपका कूरियर कस्टम में रोका गया है। छुड़ाने के लिए तुरंत 2,500 रुपये जमा करें वरना पार्सल वापस भेज दिया जाएगा।
+scam	mr	parcel	इंडिया पोस्ट: तुमचे पार्सल चुकीच्या पत्त्यामुळे थांबवले आहे. पत्ता अपडेट करा आणि 25 रुपये शुल्क भरा: post-delivery.site
+scam	mr	parcel	तुमचे कुरिअर कस्टम्समध्ये अडकले आहे. ते सोडवण्यासाठी लगेच 1,900 रुपये भरा.
+scam	hinglish	parcel	Aapka parcel address galat hone ki wajah se ruka hua hai. 25 rupay fee pay karke address update karo: tinyurl.com/post-upd
+scam	hinglish	parcel	Customs mein aapka courier pakda gaya hai, release ke liye 3000 bhejo warna case ho jayega
+scam	en	job	Part time job offer! Earn Rs 3,000 to 8,000 daily from home by liking YouTube videos. Contact on WhatsApp 9354127780. Registration fee Rs 499 only.
+scam	en	job	Congratulations, you are selected for Data Entry work from home. Salary 35,000/month. Pay refundable security deposit of Rs 2,000 to confirm your joining.
+scam	en	job	Amazon hiring! Work 1-2 hrs daily, earn 5000 per day. No experience needed. Click t.me/amzjobs2 to start today.
+scam	hi	job	घर बैठे काम करें और रोज़ 5,000 रुपये कमाएं। रजिस्ट्रेशन फीस सिर्फ 299 रुपये। अभी व्हाट्सएप करें 8076234519
+scam	hi	job	आपका चयन डेटा एंट्री नौकरी के लिए हुआ है। जॉइनिंग के लिए 1,500 रुपये सिक्योरिटी डिपॉजिट जमा करें।
+scam	mr	job	घरबसल्या काम करा आणि दररोज 4,000 रुपये कमवा. नोंदणी शुल्क फक्त 399 रुपये. आत्ताच व्हॉट्सॲप करा 9921345067
+scam	mr	job	तुमची डेटा एंट्री नोकरीसाठी निवड झाली आहे. रुजू होण्यासाठी 2,000 रुपये अनामत रक्कम भरा.
+scam	hinglish	job	Ghar baithe kaam karo, roz 3000 kamao. Sirf YouTube video like karna hai. Joining fee 500, WhatsApp karo 7763018294
+scam	hinglish	job	Aapka selection ho gaya hai work from home job ke liye. Pehle 1500 registration fee bhejo phir kaam milega
+scam	en	invest	Double your money in 30 days! Invest Rs 10,000 and get Rs 20,000 guaranteed. Join our crypto trading group t.me/cryptoprofitx
+scam	en	invest	Guaranteed 5% daily returns on Bitcoin investment. Zero risk. Limited slots, join now: crypto-earn.vip
+scam	en	invest	Join our VIP stock tips group, 300% profit guaranteed in one week. Pay Rs 5,999 membership today and recover it in 1 day.
+scam	hi	invest	सिर्फ 30 दिनों में पैसा डबल! 10,000 रुपये निवेश करें और पाएं 20,000 रुपये, गारंटी के साथ।
+scam	hi	invest	बिटकॉइन में निवेश करें और रोज़ 5% मुनाफा कमाएं, कोई जोखिम नहीं। अभी जुड़ें: crypto-labh.top
+scam	mr	invest	फक्त 30 दिवसांत पैसे दुप्पट! 10,000 रुपये गुंतवा आणि हमखास 20,000 रुपये मिळवा.
+scam	mr	invest	क्रिप्टोमध्ये गुंतवणूक करा आणि दररोज 5% नफा मिळवा, कोणताही धोका नाही. आत्ताच ग्रुपमध्ये सामील व्हा.
+scam	hinglish	invest	Paisa double karo sirf 1 mahine mein! 10000 lagao 20000 pao, 100% guarantee. Telegram group join karo
+scam	hinglish	invest	Crypto mein invest karo aur roz 5% profit pao, bilkul risk free. Abhi join karo crypto-kamai.site
+scam	en	bill	Dear Consumer, your electricity power will be disconnected tonight at 9:30 PM because your previous month bill was not updated. Please immediately contact our electricity officer 8167204593.
+scam	en	bill	MSEB: Your light bill is pending. Power supply will be cut today. Call 7319840652 immediately to update.
+scam	en	bill	Your gas connection will be disconnected today due to pending KYC and bill. Call our officer at 9205634178 to avoid disconnection.
+scam	hi	bill	प्रिय उपभोक्ता, आपका पिछले महीने का बिल अपडेट नहीं हुआ है, आज रात 9:30 बजे बिजली काट दी जाएगी। तुरंत बिजली अधिकारी से संपर्क करें 9798126543
+scam	hi	bill	आपका गैस कनेक्शन आज बंद कर दिया जाएगा। बिल अपडेट करने के लिए तुरंत इस नंबर पर कॉल करें 8340917265
+scam	mr	bill	प्रिय ग्राहक, तुमचे मागील महिन्याचे वीज बिल अपडेट नाही. आज रात्री 9:30 वाजता तुमचा वीज पुरवठा खंडित केला जाईल. लगेच संपर्क करा 8459021376
+scam	mr	bill	महावितरण: तुमचे वीज बिल थकीत आहे. आज वीज कनेक्शन कापले जाईल. ताबडतोब या नंबरवर कॉल करा 7387105824
+scam	hinglish	bill	Dear consumer aapka bijli bill update nahi hua hai, aaj raat 9:30 baje light kaat di jayegi. Turant call karein 9142670385
+scam	hinglish	bill	Aapka gas connection aaj band ho jayega. Bill update ke liye abhi is number pe call karo 8603419527
+scam	en	support	Your Amazon account has been locked due to suspicious activity. Call Amazon customer care at 8917346025 to unlock it.
+scam	en	support	Google Pay customer care: if your payment failed, call our 24x7 helpline 7488201365 and install AnyDesk so our agent can help you.
+scam	en	support	Your Netflix subscription payment failed. Call support on 9078123456 or update your card at netflix-billing-help.com
+scam	hi	support	आपका फोनपे खाता बंद होने वाला है। ग्राहक सेवा नंबर 7091342586 पर तुरंत कॉल करें।
+scam	hi	support	रिफंड पाने के लिए हमारे एजेंट से बात करें और AnyDesk ऐप डाउनलोड करें, वो आपकी मदद करेंगे।
+scam	mr	support	तुमचे फोनपे खाते बंद होणार आहे. ग्राहक सेवा क्रमांक 9545213087 वर लगेच कॉल करा.
+scam	mr	support	परतावा मिळवण्यासाठी आमच्या प्रतिनिधीशी बोला आणि AnyDesk ॲप डाउनलोड करा.
+scam	hinglish	support	Aapka Flipkart refund atka hua hai. Customer care number 8292034517 pe call karo, wo AnyDesk install karwa ke refund kar denge
+scam	hinglish	support	Paytm helpline: payment fail hua? Is number pe call karo 9123704658, agent screen share karke paisa wapas karega
+safe	en	otp	482910 is your OTP for login to your HDFC Bank NetBanking. Valid for 5 minutes. Do not share this OTP with anyone.
+safe	en	otp	Your OTP for Flipkart login is 731905. Never share your OTP with anyone, Flipkart will never ask for it.
+safe	en	txn	Rs 1,250.00 debited from your A/c XX4521 on 12-Oct via UPI to SWIGGY. Not you? Report it in your bank app.
+safe	en	txn	Salary of Rs 32,000 credited to your account XX9087 on 01-Oct. Available balance Rs 40,512.
+safe	en	txn	Your SIP of Rs 2,000 in your mutual fund has been processed successfully.
+safe	en	delivery	Your Amazon order has been shipped and will arrive by Thursday. Track it in the Amazon app.
+safe	en	delivery	Your package was delivered to the front door at 2:15 PM.
+safe	en	bill	Your electricity bill of Rs 1,342 for September is generated. Due date 15 Oct. Pay via the official app or website.
+safe	en	bill	Reminder: Your Jio recharge of Rs 299 expires in 3 days. Recharge using the MyJio app.
+safe	en	service	Your appointment with Dr Mehta is confirmed for 21 Oct at 11:30 AM.
+safe	en	service	Your train ticket PNR 4521367890 is confirmed. Coach S4, Berth 32. Happy journey.
+safe	en	service	Your complaint number 45126 has been registered. Our technician will visit tomorrow between 10 AM and 1 PM.
+safe	en	service	Thanks for shopping at DMart. Your bill amount is Rs 845. Visit again.
+safe	en	personal	Hi, are we still meeting at 6 for dinner? Let me know.
+safe	en	personal	Mom, I reached the hostel safely. Will call you after class.
+safe	en	personal	Can you send me the notes from today's lecture? Exam is on Monday.
+safe	en	personal	The meeting is moved to 3 pm tomorrow, same room.
+safe	en	personal	Happy birthday! Have a great year ahead.
+safe	en	personal	Can you pick up milk and bread on your way home?
+safe	en	personal	Ok, I'll call you when I'm free.
+safe	hi	otp	आपका ओटीपी 593021 है। यह 10 मिनट के लिए मान्य है। इसे किसी के साथ साझा न करें।
+safe	hi	txn	आपके खाते XX3412 से 500 रुपये UPI द्वारा डेबिट किए गए। शेष राशि 12,450 रुपये।
+safe	hi	txn	आपकी सैलरी 28,000 रुपये आपके खाते में जमा हो गई है।
+safe	hi	delivery	आपका ऑर्डर भेज दिया गया है और कल तक पहुँच जाएगा।
+safe	hi	bill	आपका बिजली बिल 1,120 रुपये है, अंतिम तिथि 20 अक्टूबर है।
+safe	hi	bill	आपका रिचार्ज सफल रहा। 28 दिनों के लिए 1.5GB प्रतिदिन डेटा।
+safe	hi	service	आपकी डॉक्टर से मुलाकात कल सुबह 10 बजे तय है।
+safe	hi	service	आपकी ट्रेन का टिकट कन्फर्म हो गया है, कोच B2, सीट 45।
+safe	hi	service	परीक्षा का टाइमटेबल नोटिस बोर्ड पर लगा दिया गया है।
+safe	hi	personal	बेटा, खाना खा लिया? रात को फोन करना।
+safe	hi	personal	आज शाम को मंदिर चलेंगे, तैयार रहना।
+safe	hi	personal	कल की मीटिंग 11 बजे है, समय पर आ जाना।
+safe	hi	personal	जन्मदिन की बहुत बहुत शुभकामनाएँ!
+safe	hi	personal	मैं घर पहुँच गया हूँ, चिंता मत करना।
+safe	hi	personal	भैया, कल दुकान कितने बजे खुलेगी?
+safe	hi	personal	दीदी, शादी की तस्वीरें भेज दो ना।
+safe	mr	otp	तुमचा ओटीपी 846120 आहे. तो 10 मिनिटांसाठी वैध आहे. कोणालाही सांगू नका.
+safe	mr	txn	तुमच्या खाते XX7754 मधून 300 रुपये UPI द्वारे वजा झाले. शिल्लक 8,210 रुपये.
+safe	mr	txn	तुमचा पगार 30,000 रुपये खात्यात जमा झाला आहे.
+safe	mr	delivery	तुमची ऑर्डर पाठवली आहे आणि उद्यापर्यंत मिळेल.
+safe	mr	bill	तुमचे वीज बिल 980 रुपये आहे, देय तारीख 18 ऑक्टोबर.
+safe	mr	bill	तुमचे रिचार्ज यशस्वी झाले. 28 दिवसांसाठी रोज 2GB डेटा.
+safe	mr	service	तुमची डॉक्टरांची भेट उद्या दुपारी 4 वाजता निश्चित झाली आहे.
+safe	mr	service	तुमचे रेल्वे तिकीट कन्फर्म झाले आहे, डबा S3, सीट 21.
+safe	mr	service	परीक्षेचे वेळापत्रक वेबसाइटवर प्रसिद्ध झाले आहे.
+safe	mr	personal	आई, मी पोहोचलो. संध्याकाळी फोन करतो.
+safe	mr	personal	उद्या सकाळी 9 वाजता कॉलेजला ये, प्रॅक्टिकल आहे.
+safe	mr	personal	वाढदिवसाच्या हार्दिक शुभेच्छा!
+safe	mr	personal	आज रात्री जेवायला घरी येशील का?
+safe	mr	personal	गणपतीच्या आरतीला सात वाजता या.
+safe	mr	personal	दादा, उद्या बाजारात जाताना मला सांग.
+safe	mr	personal	मी थोडा उशिरा येईन, वाट पाहू नका.
+safe	hinglish	personal	Bhai kal match dekhne chalega? 7 baje tak aa jana
+safe	hinglish	personal	Mummy main ghar pahunch gaya, khana kha liya
+safe	hinglish	personal	Aaj office se late aaunga, dinner mat banana
+safe	hinglish	personal	Kal ki class cancel ho gayi hai, sir ne bataya
+safe	hinglish	personal	Tera parcel aa gaya hai, ghar pe rakh diya hai
+safe	hinglish	personal	Happy birthday yaar! Party kab de raha hai?
+safe	hinglish	personal	Notes bhej de na kal ke lecture ke
+safe	hinglish	personal	Main 10 minute mein pahunch raha hoon, wait karo
+safe	hinglish	personal	Doctor ka appointment kal subah 11 baje ka hai
+safe	hinglish	personal	Didi shaadi ki photos bhej do please
+safe	hinglish	personal	Aaj shaam mandir chalenge, ready rehna
+safe	hinglish	personal	Paise mil gaye, thank you bhai
+safe	hinglish	personal	Kal se gym shuru karte hai, 6 baje milte hai
+safe	hinglish	personal	Recharge ho gaya, ab call kar sakta hoon
+safe	hinglish	personal	Mera phone ki battery khatam ho rahi hai, baad mein baat karte hai
+safe	hinglish	otp	Aapka OTP 284716 hai. Kisi ke saath share na karein.
+safe	hinglish	bill	Bijli ka bill 1,050 aaya hai is mahine, kal bhar dunga
+safe	hinglish	personal	Train 20 minute late hai, station pe ruk ja
